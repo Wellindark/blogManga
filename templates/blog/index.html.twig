@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+{% block title %}My blog index {% endblock %}
+{% block body %}
+    {% for entry in blog_entries %}
+        <h2>{{ entry.title }}</h2>
+        <p>{{ entry.content }}</p>
+        {{ dump(entry.image) }}<p><img src="data:image/jpeg;base64,{{ entry.image }}" /></p>
+        <p>{{ entry.created|date }}</p>
+    {% endfor %}
+{% endblock %}
